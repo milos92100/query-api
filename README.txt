@@ -3,6 +3,9 @@ https://stackoverflow.com/questions/54578222/howto-create-a-bool-query-with-elas
 
 https://www.graphql-java.com/documentation/v16/
 
+https://www.elastic.co/guide/en/kibana/current/lucene-query.html
+https://www.elastic.co/guide/en/elasticsearch/reference/7.11/query-dsl-query-string-query.html#query-string-syntax
+
 
 
 DOCKER:

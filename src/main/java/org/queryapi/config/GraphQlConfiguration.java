@@ -6,6 +6,7 @@ import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
+import org.queryapi.fetcher.elastic.OrdersByQueryElasticFetcher;
 import org.queryapi.fetcher.elastic.OrdersElasticFetcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -24,6 +25,9 @@ public class GraphQlConfiguration {
 
     @Autowired
     OrdersElasticFetcher ordersElasticFetcher;
+
+    @Autowired
+    OrdersByQueryElasticFetcher ordersByQueryElasticFetcher;
 
     @Bean
     @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
@@ -48,6 +52,7 @@ public class GraphQlConfiguration {
                 .type("QueryType", builder ->
                         builder
                                 .dataFetcher("orders", ordersElasticFetcher)
+                                .dataFetcher("ordersByQuery", ordersByQueryElasticFetcher)
                 )
                 .build();
 
