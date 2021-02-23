@@ -23,4 +23,6 @@
 hs_err_pid*
 /query-api-demo.iml
 /.idea/
+.idea
 /target/
+target
